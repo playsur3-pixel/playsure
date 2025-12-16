@@ -22,7 +22,6 @@ export const profile = {
     { label: "Discord", href: "https://discord.gg/DjxqXj67HU" },
     { label: "TikTok", href: "https://www.tiktok.com/@playsur3" },
     { label: "Instagram", href: "https://www.instagram.com/play.sur3/" },
-    { label: "YouTube", href: "https://www.youtube.com/@playSUR3/posts" },
     { label: "Facebook", href: "https://www.facebook.com/people/Playsure/61585334156709/" },
   ] as Link[],
 
