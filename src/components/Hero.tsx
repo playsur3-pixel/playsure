@@ -14,6 +14,7 @@ export function Hero({
   about,
   ctas,
   links,
+  videos
 }: {
   cover: string;
   avatar: string;
@@ -25,6 +26,7 @@ export function Hero({
   about: string;
   ctas: Link[];
   links: Link[];
+  videos: string[];
 }) {
   return (
     <section id="overview" className="scroll-mt-24">
@@ -72,49 +74,50 @@ export function Hero({
           </div>
 
           <div className="mt-5 text-xs text-muted">
-            Tip : remplace <span className="text-text">/public/assets/avatar.png</span> par ta photo.
           </div>
         </Card>
 
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
-          className="relative overflow-hidden rounded-xl2 border border-border/50 shadow-soft"
-        >
-          <img src={cover} alt="Cover" className="h-full min-h-[280px] w-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-bg/90 via-bg/50 to-transparent" />
-          <div className="absolute inset-0 p-6">
-            <div className="max-w-xl">
-              <div className="inline-flex items-center gap-2 rounded-full border border-border/50 bg-bg/40 px-3 py-1 text-xs text-muted">
-                <span className="h-2 w-2 rounded-full bg-cs2" />
-                Profil — style Steam / CS2
-              </div>
-              <h1 className="mt-4 text-3xl font-semibold tracking-tight">
-                Un profil propre, orienté perf, avec une vibe CS2.
-              </h1>
-              <p className="mt-3 text-sm text-muted">
-                Page unique (React + Tailwind) : stats rapides, services, portfolio, liens — parfait pour une bio TikTok/YouTube
-                ou une page d’accueil.
-              </p>
+        <fieldset className="relative rounded-xl2 border border-border/50 p-0 shadow-soft">
+          <legend className="ml-4 px-2 text-xs text-muted">Médias</legend>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+            className="relative overflow-hidden rounded-xl2"
+          >
+            {videos?.length ? (
+              <video
+                className="h-full min-h-[280px] w-full object-cover"
+                src={videos[0]}
+                controls
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                onLoadedMetadata={(e) => {
+                    e.currentTarget.volume = 0.3;
+                    e.currentTarget.muted = false;
+                  }}
+                  onPlay={(e) => {
+                    e.currentTarget.volume = 0.3;
+                    e.currentTarget.muted = false;
+                  }}
+              />
+            ) : (
+              <img
+                src={cover}
+                alt="Cover"
+                className="h-full min-h-[280px] w-full object-cover"
+              />
+            )}
 
-              <div className="mt-5 flex flex-wrap gap-2">
-                <a
-                  href="#services"
-                  className="rounded-full border border-border/60 bg-card/40 px-4 py-2 text-sm font-semibold hover:border-cs2/60"
-                >
-                  Voir mes services
-                </a>
-                <a
-                  href="#portfolio"
-                  className="rounded-full border border-border/60 bg-card/40 px-4 py-2 text-sm font-semibold hover:border-cs2/60"
-                >
-                  Portfolio
-                </a>
-              </div>
-            </div>
-          </div>
-        </motion.div>
+            {/* Gradient au-dessus mais pas sur les controls */}
+            <div className="pointer-events-none absolute inset-x-0 top-0 bottom-16 bg-gradient-to-r from-bg/90 via-bg/55 to-transparent" />
+          </motion.div>
+        </fieldset>
+
+
       </div>
     </section>
   );

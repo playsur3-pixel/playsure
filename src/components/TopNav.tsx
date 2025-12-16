@@ -4,7 +4,6 @@ const items = [
   { label: "Overview", href: "#overview" },
   { label: "Services", href: "#services" },
   { label: "Portfolio", href: "#portfolio" },
-  { label: "Contact", href: "#contact" },
 ];
 
 export function TopNav() {
@@ -29,12 +28,6 @@ export function TopNav() {
             </a>
           ))}
         </div>
-        <a
-          href="#contact"
-          className="rounded-full bg-cs2 px-4 py-2 text-sm font-semibold text-bg hover:bg-cs2b"
-        >
-          Me contacter
-        </a>
       </div>
     </div>
   );

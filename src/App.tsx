@@ -13,23 +13,23 @@ export default function App() {
       <TopNav />
 
       <main className="mx-auto max-w-6xl px-4 py-8">
-        <Hero
-          cover={profile.cover}
-          avatar={profile.avatar}
-          displayName={profile.displayName}
-          handle={profile.handle}
-          tagline={profile.tagline}
-          status={profile.status}
-          location={profile.location}
-          about={profile.about}
-          ctas={profile.ctas}
-          links={profile.links}
-        />
+      <Hero
+        cover={profile.cover}
+        videos={profile.heroVideos}
+        avatar={profile.avatar}
+        displayName={profile.displayName}
+        handle={profile.handle}
+        tagline={profile.tagline}
+        status={""} // osef
+        location={""} // osef
+        about={profile.about}
+        ctas={profile.ctas}
+        links={profile.links}
+      />
 
         <section className="mt-8">
           <SectionTitle
-            title="Infos rapides (style Steam)"
-            subtitle="Des cartes courtes et lisibles — parfait pour donner le contexte en 3 secondes."
+            title="Informations"
           />
           <StatGrid stats={profile.stats} />
         </section>
@@ -37,29 +37,26 @@ export default function App() {
         <section id="services" className="mt-10 scroll-mt-24">
           <SectionTitle
             title="Services"
-            subtitle="Coaching, mapmaking, moviemaking — tout ce que tu veux mettre en avant."
           />
           <SkillCards skills={profile.skills} />
+        </section>
+
+        <section id="services_2nd" className="mt-10 scroll-mt-24">
+          <SectionTitle
+            title="Autres domaines"
+          />
+          <SkillCards skills={profile.skills_2nd} />
         </section>
 
         <section id="portfolio" className="mt-10 scroll-mt-24">
           <SectionTitle
             title="Portfolio"
-            subtitle="Quelques blocs 'showcase' (tu peux remplacer par tes maps, vidéos, liens, etc.)."
           />
           <ShowcaseGrid items={profile.showcases} />
         </section>
 
-        <section id="contact" className="mt-10 scroll-mt-24">
-          <SectionTitle
-            title="Me contacter"
-            subtitle="Une CTA claire + liens. Objectif : convertir rapidement."
-          />
-          <ContactCard links={profile.links} />
-        </section>
-
         <footer className="mt-12 border-t border-border/40 py-8 text-center text-xs text-muted">
-          © {new Date().getFullYear()} playSURE — React + Tailwind • Palette inspirée CS2
+          © {new Date().getFullYear()} playSURE — CS2 Coaching
         </footer>
       </main>
     </div>

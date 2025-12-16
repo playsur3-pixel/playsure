@@ -8,9 +8,6 @@ export function ContactCard({ links }: { links: Link[] }) {
         <CardTitle>Contact</CardTitle>
       </CardHeader>
       <CardContent>
-        <p className="text-sm text-muted">
-          Mets ici tes liens réels (Steam/Faceit/Discord). L’idée : 1 clic → prise de contact.
-        </p>
         <div className="mt-4 flex flex-wrap gap-2">
           {links.map((l) => (
             <a
