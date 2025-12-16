@@ -91,8 +91,7 @@ export const profile = {
 
     // video skillCard
     heroVideos: [
-      "/assets/hero-video-1.mp4",
-      "/assets/hero-video-2.mp4",
+      "/assets/video-intro.mp4",
 ],
 
 
