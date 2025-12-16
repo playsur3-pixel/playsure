@@ -70,22 +70,22 @@ export const profile = {
 
   showcases: [
     {
-      title: "LAN & compétition",
-      desc: "Expérience LAN entre potes après notre âge d'or, mais peut importe ! Faites en !",
-      img: "/assets/lan-wide.png",
-      tags: ["LAN", "Team", "Comms"],
+      title: "LAN sur CS:GO",
+      desc: "De nuit, l'ambiance s'intensifie ! Prêt à dormir sous les tables ?",      
+      img: "/assets/LAN/AWARE 1.png",
+      tags: ["LAN", "Team", "Chill"],
     },
     {
-      title: "Review de match (setup)",
-      desc: "Workflow de review en équipe : lecture, callouts, erreurs récurrentes, plan d'action.",
-      img: "/assets/lan-close.png",
-      tags: ["VOD Review", "Coaching", "Structure"],
+      title: "LAN sur CS:GO",
+      desc: "Expérience LAN entre potes après notre âge d'or, mais peut importe le niveau ! Faites en !",
+      img: "/assets/LAN/AWARE 2.png",
+      tags: ["LAN", "Team", "Chill"],
     },
     {
-      title: "Branding CS2 (cover)",
-      desc: "Palette orange/gris inspirée CS2, utilisable en bannières et pages de profil.",
-      img: "/assets/cover-cs2.png",
-      tags: ["Design", "CS2", "Brand"],
+      title: "Pour découvrir entièrement l'ambiance, le lien est au-dessous !",
+      desc: "Merci à Vakarm.net pour leurs photos",
+      img: "/assets/LAN/Nantarena.png",
+      tags: ["Cover", "French Touch", "RIP"],
     },
   ] as Showcase[],
 

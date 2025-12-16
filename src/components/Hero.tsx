@@ -88,6 +88,12 @@ export function Hero({
               controls
               playsInline
               preload="metadata"
+              onLoadedMetadata={(e) => {
+              e.currentTarget.volume = 0.15;
+            }}
+            onCanPlay={(e) => {
+              e.currentTarget.volume = 0.15;
+            }}
             />
           ) : (
             <>

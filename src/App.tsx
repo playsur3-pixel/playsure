@@ -52,7 +52,19 @@ export default function App() {
           <SectionTitle
             title="Portfolio"
           />
+        <a
+          href="https://vakarm.net/coverage/galerie/Nantarena-16-2-Samedi/593"
+          target="_blank"
+          rel="noreferrer"
+          className="mt-4 mx-auto flex w-fit rounded-full border border-border/60 bg-card/40 px-4 py-2 text-sm font-semibold hover:border-cs2/60"
+        >
+          Accéder à la galerie officielle VaKarM.net
+        </a>
+        <br />
+          <br />
+          
           <ShowcaseGrid items={profile.showcases} />
+
         </section>
 
         <footer className="mt-12 border-t border-border/40 py-8 text-center text-xs text-muted">
