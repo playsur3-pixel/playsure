@@ -80,41 +80,28 @@ export function Hero({
         <fieldset className="relative rounded-xl2 border border-border/50 p-0 shadow-soft">
           <legend className="ml-4 px-2 text-xs text-muted">Médias</legend>
           
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-            className="relative overflow-hidden rounded-xl2"
-          >
-            {videos?.length ? (
-              <video
-                className="h-full min-h-[280px] w-full object-cover"
-                src={videos[0]}
-                controls
-                muted
-                loop
-                playsInline
-                preload="metadata"
-                onLoadedMetadata={(e) => {
-                    e.currentTarget.volume = 0.3;
-                    e.currentTarget.muted = false;
-                  }}
-                  onPlay={(e) => {
-                    e.currentTarget.volume = 0.3;
-                    e.currentTarget.muted = false;
-                  }}
-              />
-            ) : (
+        <motion.div className="relative overflow-hidden rounded-xl2 border border-border/50 shadow-soft">
+          {videos?.length ? (
+            <video
+              className="h-full min-h-[280px] w-full object-cover"
+              src={videos[0]}
+              controls
+              playsInline
+              preload="metadata"
+            />
+          ) : (
+            <>
               <img
                 src={cover}
                 alt="Cover"
                 className="h-full min-h-[280px] w-full object-cover"
               />
-            )}
+              {/* Overlay UNIQUEMENT sur l'image */}
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-bg/90 via-bg/55 to-transparent" />
+            </>
+          )}
+        </motion.div>
 
-            {/* Gradient au-dessus mais pas sur les controls */}
-            <div className="pointer-events-none absolute inset-x-0 top-0 bottom-16 bg-gradient-to-r from-bg/90 via-bg/55 to-transparent" />
-          </motion.div>
         </fieldset>
 
 
