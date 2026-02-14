@@ -77,35 +77,81 @@ export function Hero({
           </div>
         </Card>
 
-        <fieldset className="relative rounded-xl2 border border-border/50 p-0 shadow-soft">
+        <fieldset className="relative rounded-xl2 border border-border/50 p-0 shadow-soft flex flex-col">
           <legend className="ml-4 px-2 text-xs text-muted">Médias</legend>
-          
-        <motion.div className="relative overflow-hidden rounded-xl2 border border-border/50 shadow-soft">
-          {videos?.length ? (
-            <video
-              className="h-full min-h-[280px] w-full object-cover"
-              src={videos[0]}
-              controls
-              playsInline
-              preload="metadata"
-              onLoadedMetadata={(e) => {
-              e.currentTarget.volume = 0.15;
-            }}
-            onCanPlay={(e) => {
-              e.currentTarget.volume = 0.15;
-            }}
+                  
+        <motion.div className="relative overflow-hidden rounded-xl2 border border-border/50 shadow-soft flex-1 min-h-[280px] flex items-center justify-center p-4">
+         {videos?.length ? (
+  (() => {
+    const src = videos[0];
+
+    const isYouTube =
+      /^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.be)\//i.test(src);
+
+    const getYouTubeEmbedUrl = (url: string) => {
+      // Supporte youtube.com/watch?v=... et youtu.be/...
+      try {
+        const u = new URL(url);
+        if (u.hostname.includes("youtu.be")) {
+          const id = u.pathname.replace("/", "");
+          return `https://www.youtube-nocookie.com/embed/${id}?rel=0&modestbranding=1`;
+        }
+        const id = u.searchParams.get("v");
+        if (id) {
+          return `https://www.youtube-nocookie.com/embed/${id}?rel=0&modestbranding=1`;
+        }
+      } catch {
+        // si URL invalide, on retombe sur le <video>
+      }
+      return null;
+    };
+
+    if (isYouTube) {
+      const embed = getYouTubeEmbedUrl(src);
+      if (embed) {
+        return (
+        <div className="h-full min-h-[280px] w-full flex items-center justify-center">
+          <div className="w-full max-w-3xl aspect-video">
+            <iframe
+              className="h-full w-full rounded-xl2"
+              src={embed}
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
             />
-          ) : (
-            <>
-              <img
-                src={cover}
-                alt="Cover"
+          </div>
+        </div>
+        );
+      }
+    }
+
+    // fallback: si ce n'est pas YouTube, on garde la vidéo HTML5
+    return (
+              <video
                 className="h-full min-h-[280px] w-full object-cover"
+                src={src}
+                controls
+                playsInline
+                preload="metadata"
+                onLoadedMetadata={(e) => {
+                  e.currentTarget.volume = 0.15;
+                }}
+                onCanPlay={(e) => {
+                  e.currentTarget.volume = 0.15;
+                }}
               />
-              {/* Overlay UNIQUEMENT sur l'image */}
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-bg/90 via-bg/55 to-transparent" />
-            </>
-          )}
+            );
+          })()
+        ) : (
+          <>
+            <img
+              src={cover}
+              alt="Cover"
+              className="h-full min-h-[280px] w-full object-cover"
+            />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-bg/90 via-bg/55 to-transparent" />
+          </>
+        )}
         </motion.div>
 
         </fieldset>
