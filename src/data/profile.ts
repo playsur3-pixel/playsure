@@ -127,7 +127,7 @@ export const profiles: Record<Locale, Profile> = {
               "Mensuel : 5,50 € / mois.",
               "6 mois : 29 €, soit 4,83 € / mois, 12 % de réduction.",
               "Annuel : 48 €, soit 4,00 € / mois, 27,27 % de réduction.",
-              "Date de sortie prévue de la bêta : 03/07/2026.",
+              "Date de sortie prévue de la bêta : 03/08/2026.",
             ],
           },
           {
