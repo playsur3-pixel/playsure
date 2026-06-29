@@ -2,7 +2,13 @@ import { Card, CardContent, CardHeader, CardTitle } from "./Card";
 import { Badge } from "./Badge";
 import type { Showcase } from "../data/profile";
 
-export function ShowcaseGrid({ items }: { items: Showcase[] }) {
+export function ShowcaseGrid({
+  items,
+  viewLabel,
+}: {
+  items: Showcase[];
+  viewLabel: string;
+}) {
   return (
     <div className="grid gap-3 lg:grid-cols-3">
       {items.map((it) => (
@@ -33,7 +39,7 @@ export function ShowcaseGrid({ items }: { items: Showcase[] }) {
                 target="_blank"
                 rel="noreferrer"
               >
-                Voir <span aria-hidden>→</span>
+                {viewLabel} <span aria-hidden>→</span>
               </a>
             ) : null}
           </CardContent>

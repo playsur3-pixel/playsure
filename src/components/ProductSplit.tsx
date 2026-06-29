@@ -2,24 +2,27 @@ import { Badge } from "./Badge";
 import { Card } from "./Card";
 import type { Product } from "../data/profile";
 
-export function ProductSplit({ products }: { products: Product[] }) {
+export function ProductSplit({
+  products,
+  title,
+  subtitle,
+}: {
+  products: Product[];
+  title: string;
+  subtitle: string;
+}) {
   return (
     <section id="offers" className="mt-10 scroll-mt-24">
       <div className="mb-4 text-center">
-        <h2 className="text-2xl font-semibold tracking-tight">Coaching et StratMotion</h2>
-        <p className="mx-auto mt-2 max-w-2xl text-sm text-muted">
-          Deux activités séparées. Même terrain : mieux comprendre CS2, mieux s'entraîner, mieux transmettre, mieux exécuter.
-        </p>
+        <h2 className="text-2xl font-semibold tracking-tight">{title}</h2>
+        <p className="mx-auto mt-2 max-w-2xl text-sm text-muted">{subtitle}</p>
       </div>
 
       <div className="relative grid gap-4 lg:grid-cols-2">
         <div className="pointer-events-none absolute left-1/2 top-4 hidden h-[calc(100%-2rem)] w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-cs2/50 to-transparent lg:block" />
 
         {products.map((product) => (
-          <Card
-            key={product.title}
-            className="relative overflow-hidden p-6 md:p-7"
-          >
+          <Card key={product.title} className="relative overflow-hidden p-6 md:p-7">
             <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cs2/60 to-transparent" />
 
             <div className="flex min-h-full flex-col">
@@ -27,12 +30,8 @@ export function ProductSplit({ products }: { products: Product[] }) {
                 <p className="text-xs font-semibold uppercase tracking-[0.28em] text-cs2">
                   {product.kicker}
                 </p>
-                <h3 className="mt-2 text-2xl font-semibold tracking-tight">
-                  {product.title}
-                </h3>
-                <p className="mt-3 text-sm leading-7 text-muted">
-                  {product.description}
-                </p>
+                <h3 className="mt-2 text-2xl font-semibold tracking-tight">{product.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-muted">{product.description}</p>
               </div>
 
               <a
@@ -46,10 +45,7 @@ export function ProductSplit({ products }: { products: Product[] }) {
 
               <div className="mt-6 grid gap-3">
                 {product.blocks.map((block) => (
-                  <div
-                    key={block.title}
-                    className="rounded-xl border border-border/60 bg-bg/45 p-4"
-                  >
+                  <div key={block.title} className="rounded-xl border border-border/60 bg-bg/45 p-4">
                     <h4 className="text-sm font-semibold">{block.title}</h4>
                     <ul className="mt-3 space-y-2 text-sm leading-6 text-muted">
                       {block.items.map((item) => (
