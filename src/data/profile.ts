@@ -36,7 +36,8 @@ const shared = {
   avatar: "/assets/avatar-romain-headset.webp",
   links: [
     { label: "YouTube", href: "https://www.youtube.com/@playSUR3" },
-    { label: "Discord", href: "https://discord.gg/DjxqXj67HU" },
+    { label: "Discord Coaching", href: "https://discord.gg/PJZ4dzjJp" },
+    { label: "Discord StratMotion", href: "https://discord.gg/nRDNrbTtG" },
     { label: "TikTok", href: "https://www.tiktok.com/@playsur3" },
   ] as Link[],
 };
