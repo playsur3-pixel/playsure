@@ -14,7 +14,7 @@ export default {
         cs2b: "rgb(var(--cs2b) / <alpha-value>)"
       },
       boxShadow: {
-        soft: "0 10px 40px rgba(0,0,0,.35)",
+        soft: "0 10px 36px rgba(0,0,0,.26)",
       },
       borderRadius: {
         xl2: "1.25rem"
