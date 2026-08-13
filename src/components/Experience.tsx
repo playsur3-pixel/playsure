@@ -1,11 +1,10 @@
-import { Card } from "./Card";
 import type { ExperienceContent } from "../data/profile";
 
 export function Experience({ content }: { content: ExperienceContent }) {
   return (
     <section id="experience" className="mx-auto mt-4 max-w-4xl scroll-mt-24">
-      <details className="group">
-        <summary className="list-none cursor-pointer rounded-xl2 border border-border/50 bg-card/70 p-4 shadow-soft backdrop-blur transition hover:border-cs2/60 hover:bg-card/90 md:p-5 [&::-webkit-details-marker]:hidden">
+      <details className="group overflow-hidden rounded-xl2 border border-border/50 bg-card/70 shadow-soft backdrop-blur transition hover:border-cs2/60 open:bg-card/80">
+        <summary className="list-none cursor-pointer p-4 transition hover:bg-card/90 md:p-5 [&::-webkit-details-marker]:hidden">
           <span className="flex items-center justify-between gap-4 text-left">
             <span className="block">
               <span className="block text-xs font-semibold uppercase tracking-[0.28em] text-cs2">
@@ -32,59 +31,55 @@ export function Experience({ content }: { content: ExperienceContent }) {
           </span>
         </summary>
 
-        <Card className="mt-3 overflow-hidden p-5 md:p-7">
-          <div className="grid gap-6 lg:grid-cols-[1.1fr_1fr]">
+        <div className="border-t border-border/40 p-5 md:p-7">
+          <div className="grid items-start gap-6 lg:grid-cols-2">
             <div>
               <h3 className="text-lg font-semibold">{content.gamesTitle}</h3>
-              <p className="mt-1 text-sm leading-6 text-muted">{content.gamesIntro}</p>
 
               <ol className="mt-4 grid gap-2 sm:grid-cols-2">
                 {content.games.map((game) => (
                   <li
                     key={`${game.year}-${game.name}`}
-                    className="flex items-baseline gap-3 rounded-xl border border-border/35 bg-bg/30 px-3 py-2"
+                    className="flex min-h-[42px] items-center gap-3 rounded-xl border border-border/35 bg-bg/30 px-3 py-2"
                   >
                     <span className="w-12 shrink-0 text-xs font-semibold text-cs2">{game.year}</span>
-                    <span className="text-sm text-text/90">{game.name}</span>
+                    <span className="text-sm leading-5 text-text/90">{game.name}</span>
                   </li>
                 ))}
               </ol>
             </div>
 
-            <div className="space-y-6">
-              <div>
-                <h3 className="text-lg font-semibold">{content.lansTitle}</h3>
-                <div className="mt-4 space-y-2">
-                  {content.lans.map((lan) => (
-                    <div
-                      key={`${lan.result}-${lan.event}`}
-                      className="flex gap-3 rounded-xl border border-border/35 bg-bg/30 px-3 py-2"
-                    >
-                      <span className="shrink-0 font-semibold text-cs2">{lan.result}</span>
-                      <span className="text-sm text-text/90">{lan.event}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="rounded-2xl border border-cs2/35 bg-cs2/5 p-4">
-                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cs2">
-                  {content.videoKicker}
-                </p>
-                <h3 className="mt-2 text-lg font-semibold">{content.videoTitle}</h3>
-                <p className="mt-2 text-sm leading-6 text-muted">{content.videoDescription}</p>
-                <a
-                  href={content.videoHref}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mt-4 inline-flex rounded-full border border-cs2/50 bg-bg/50 px-4 py-2 text-sm font-semibold transition hover:border-cs2 hover:bg-cs2/10"
-                >
-                  {content.videoCta}
-                </a>
+            <div>
+              <h3 className="text-lg font-semibold">{content.lansTitle}</h3>
+              <div className="mt-4 space-y-2">
+                {content.lans.map((lan) => (
+                  <div
+                    key={`${lan.result}-${lan.event}`}
+                    className="flex min-h-[42px] items-center gap-3 rounded-xl border border-border/35 bg-bg/30 px-3 py-2"
+                  >
+                    <span className="shrink-0 font-semibold text-cs2">{lan.result}</span>
+                    <span className="text-sm leading-5 text-text/90">{lan.event}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
-        </Card>
+
+          <a
+            href={content.videoHref}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-6 flex flex-col gap-1 border-t border-border/40 pt-4 text-sm transition hover:text-cs2 sm:flex-row sm:items-center sm:justify-between"
+          >
+            <span className="min-w-0">
+              <span className="mr-3 text-xs font-semibold uppercase tracking-[0.24em] text-cs2">
+                {content.videoKicker}
+              </span>
+              <span className="font-semibold text-text">{content.videoTitle}</span>
+            </span>
+            <span className="shrink-0 font-semibold text-cs2">{content.videoCta} ↗</span>
+          </a>
+        </div>
       </details>
     </section>
   );

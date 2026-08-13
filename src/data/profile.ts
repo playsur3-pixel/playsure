@@ -18,13 +18,11 @@ export type ExperienceContent = {
   openLabel: string;
   closeLabel: string;
   gamesTitle: string;
-  gamesIntro: string;
   games: { year: string; name: string }[];
   lansTitle: string;
   lans: { result: string; event: string }[];
   videoKicker: string;
   videoTitle: string;
-  videoDescription: string;
   videoHref: string;
   videoCta: string;
 };
@@ -73,7 +71,6 @@ export const profiles: Record<Locale, Profile> = {
       openLabel: "Afficher",
       closeLabel: "Masquer",
       gamesTitle: "Historique des jeux",
-      gamesIntro: "Un parcours FPS commencé dans les années 1990, avant Counter-Strike puis CS2.",
       games: [
         { year: "1996", name: "Doom I / II" },
         { year: "1996", name: "Marathon I / II" },
@@ -97,8 +94,6 @@ export const profiles: Record<Locale, Profile> = {
       ],
       videoKicker: "Archives",
       videoTitle: "20th Anniversary — juillet 2024",
-      videoDescription:
-        "Une playlist consacrée à vingt ans de vidéos, souvenirs et archives autour de Counter-Strike.",
       videoHref: "https://www.youtube.com/playlist?list=PLUY6Q0MPXCk3tSZ_CRutbUV7nQylZJN3N",
       videoCta: "Voir la playlist YouTube",
     },
@@ -239,7 +234,6 @@ export const profiles: Record<Locale, Profile> = {
       openLabel: "Show",
       closeLabel: "Hide",
       gamesTitle: "Game history",
-      gamesIntro: "An FPS background that started in the 1990s, before Counter-Strike and later CS2.",
       games: [
         { year: "1996", name: "Doom I / II" },
         { year: "1996", name: "Marathon I / II" },
@@ -263,8 +257,6 @@ export const profiles: Record<Locale, Profile> = {
       ],
       videoKicker: "Archives",
       videoTitle: "20th Anniversary — July 2024",
-      videoDescription:
-        "A playlist dedicated to twenty years of Counter-Strike videos, memories and archived footage.",
       videoHref: "https://www.youtube.com/playlist?list=PLUY6Q0MPXCk3tSZ_CRutbUV7nQylZJN3N",
       videoCta: "Watch the YouTube playlist",
     },
