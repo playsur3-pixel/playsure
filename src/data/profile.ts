@@ -11,6 +11,23 @@ export type Product = {
   tags: string[];
 };
 export type NavItem = { label: string; href: string };
+export type ExperienceContent = {
+  kicker: string;
+  title: string;
+  subtitle: string;
+  openLabel: string;
+  closeLabel: string;
+  gamesTitle: string;
+  gamesIntro: string;
+  games: { year: string; name: string }[];
+  lansTitle: string;
+  lans: { result: string; event: string }[];
+  videoKicker: string;
+  videoTitle: string;
+  videoDescription: string;
+  videoHref: string;
+  videoCta: string;
+};
 export type Profile = {
   handle: string;
   displayName: string;
@@ -18,6 +35,7 @@ export type Profile = {
   avatar: string;
   links: Link[];
   about: string;
+  experience: ExperienceContent;
   nav: NavItem[];
   offersTitle: string;
   offersSubtitle: string;
@@ -48,6 +66,42 @@ export const profiles: Record<Locale, Profile> = {
     tagline: "Coach CS2 joueur & équipe • Méthode A.R.C. • Créateur de StratMotion",
     about:
       "J'accompagne les joueurs et les équipes CS2 avec la méthode A.R.C. Le coaching reste centré sur l'analyse, la progression et l'exécution collective. StratMotion est un logiciel indépendant du coaching, mais cohérent avec le même univers : rendre les idées stratégiques plus claires, plus visibles et plus simples à transmettre.",
+    experience: {
+      kicker: "Parcours",
+      title: "Expérience",
+      subtitle: "Historique FPS, résultats en LAN et archives Counter-Strike.",
+      openLabel: "Afficher",
+      closeLabel: "Masquer",
+      gamesTitle: "Historique des jeux",
+      gamesIntro: "Un parcours FPS commencé dans les années 1990, avant Counter-Strike puis CS2.",
+      games: [
+        { year: "1996", name: "Doom I / II" },
+        { year: "1996", name: "Marathon I / II" },
+        { year: "1997", name: "Duke Nukem 3D" },
+        { year: "2001", name: "Quake 2 / 3" },
+        { year: "2002", name: "Unreal Tournament 2003" },
+        { year: "2003", name: "Soldier of Fortune II" },
+        { year: "2005", name: "Counter-Strike 1.6" },
+        { year: "2010", name: "Call of Duty: Black Ops" },
+        { year: "2013", name: "Counter-Strike: Global Offensive" },
+        { year: "2023", name: "Counter-Strike 2" },
+      ],
+      lansTitle: "Résultats LAN",
+      lans: [
+        { result: "Top 1", event: "LRS'06 — Quake 3" },
+        { result: "Top 1", event: "LRS'08 — Counter-Strike 1.6" },
+        { result: "Top 8–16", event: "Nantarena 14.1 — CS:GO" },
+        { result: "Top 18–32", event: "Nantarena 15.1 — CS:GO" },
+        { result: "Top 18–32", event: "Nantarena 16.2 — CS:GO" },
+        { result: "Top 18–24", event: "Nantarena 17.2 — CS:GO" },
+      ],
+      videoKicker: "Archives",
+      videoTitle: "20th Anniversary — juillet 2024",
+      videoDescription:
+        "Une playlist consacrée à vingt ans de vidéos, souvenirs et archives autour de Counter-Strike.",
+      videoHref: "https://www.youtube.com/playlist?list=PLUY6Q0MPXCk3tSZ_CRutbUV7nQylZJN3N",
+      videoCta: "Voir la playlist YouTube",
+    },
     nav: [
       { label: "Profil", href: "#overview" },
       { label: "Offres", href: "#offers" },
@@ -178,6 +232,42 @@ export const profiles: Record<Locale, Profile> = {
     tagline: "CS2 player & team coach • A.R.C. method • StratMotion creator",
     about:
       "I coach CS2 players and teams through the A.R.C. method. The work focuses on analysis, progression and collective execution. StratMotion is independent from coaching, but built in the same CS2 environment: making strategic ideas clearer, easier to visualize and easier to communicate.",
+    experience: {
+      kicker: "Background",
+      title: "Experience",
+      subtitle: "FPS history, LAN results and Counter-Strike archives.",
+      openLabel: "Show",
+      closeLabel: "Hide",
+      gamesTitle: "Game history",
+      gamesIntro: "An FPS background that started in the 1990s, before Counter-Strike and later CS2.",
+      games: [
+        { year: "1996", name: "Doom I / II" },
+        { year: "1996", name: "Marathon I / II" },
+        { year: "1997", name: "Duke Nukem 3D" },
+        { year: "2001", name: "Quake 2 / 3" },
+        { year: "2002", name: "Unreal Tournament 2003" },
+        { year: "2003", name: "Soldier of Fortune II" },
+        { year: "2005", name: "Counter-Strike 1.6" },
+        { year: "2010", name: "Call of Duty: Black Ops" },
+        { year: "2013", name: "Counter-Strike: Global Offensive" },
+        { year: "2023", name: "Counter-Strike 2" },
+      ],
+      lansTitle: "LAN results",
+      lans: [
+        { result: "Top 1", event: "LRS'06 — Quake 3" },
+        { result: "Top 1", event: "LRS'08 — Counter-Strike 1.6" },
+        { result: "Top 8–16", event: "Nantarena 14.1 — CS:GO" },
+        { result: "Top 18–32", event: "Nantarena 15.1 — CS:GO" },
+        { result: "Top 18–32", event: "Nantarena 16.2 — CS:GO" },
+        { result: "Top 18–24", event: "Nantarena 17.2 — CS:GO" },
+      ],
+      videoKicker: "Archives",
+      videoTitle: "20th Anniversary — July 2024",
+      videoDescription:
+        "A playlist dedicated to twenty years of Counter-Strike videos, memories and archived footage.",
+      videoHref: "https://www.youtube.com/playlist?list=PLUY6Q0MPXCk3tSZ_CRutbUV7nQylZJN3N",
+      videoCta: "Watch the YouTube playlist",
+    },
     nav: [
       { label: "Profile", href: "#overview" },
       { label: "Offers", href: "#offers" },

@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { TopNav } from "./components/TopNav";
 import { Hero } from "./components/Hero";
+import { Experience } from "./components/Experience";
 import { ProductSplit } from "./components/ProductSplit";
 import { SectionTitle } from "./components/SectionTitle";
 import { ShowcaseGrid } from "./components/ShowcaseGrid";
@@ -121,6 +122,8 @@ export default function App() {
           about={profile.about}
           links={profile.links}
         />
+
+        <Experience content={profile.experience} />
 
         <ProductSplit
           products={profile.products}
