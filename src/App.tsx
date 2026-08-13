@@ -133,12 +133,12 @@ export default function App() {
 
         <section id="portfolio" className="mt-12 scroll-mt-24">
           <SectionTitle title={profile.portfolioTitle} update={profile.portfolioUpdate} subtitle={profile.portfolioSubtitle } />          <a
-            href="https://vakarm.net/coverage/galerie/Nantarena-16-2-Samedi/593"
+            href="#"
             target="_blank"
             rel="noreferrer"
             className="mb-5 inline-flex rounded-full border border-border/60 bg-card/40 px-4 py-2 text-sm font-semibold hover:border-cs2/60"
           >
-            {profile.galleryLabel}
+            <em><s>{profile.galleryLabel}</s></em>
           </a>
           <ShowcaseGrid items={profile.showcases} viewLabel={profile.showcaseViewLabel} />
         </section>
