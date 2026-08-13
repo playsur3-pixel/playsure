@@ -12,7 +12,7 @@ export function ShowcaseGrid({
   return (
     <div className="grid gap-3 lg:grid-cols-3">
       {items.map((it) => (
-        <Card key={it.title} className="overflow-hidden">
+        <Card key={it.img} className="overflow-hidden">
           <div className="relative aspect-[16/10] overflow-hidden">
             <img
               src={it.img}
