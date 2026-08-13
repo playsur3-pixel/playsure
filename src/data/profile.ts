@@ -39,6 +39,7 @@ export type Profile = {
   offersSubtitle: string;
   products: Product[];
   portfolioTitle: string;
+  portfolioUpdate: string;
   portfolioSubtitle: string;
   galleryLabel: string;
   showcaseViewLabel: string;
@@ -153,14 +154,14 @@ export const profiles: Record<Locale, Profile> = {
       },
       {
         kicker: "Logiciel",
-        title: "StratMotion — Beta Contributor 1.2",
+        title: "StratMotion — Beta Contributor",
         description:
-          "StratMotion est un planificateur tactique CS2 indépendant du jeu, actuellement en Beta Contributor 1.2. Il permet aux joueurs, IGL, coachs et équipes de préparer, visualiser et partager des stratégies sur les overviews de map avec trajectoires, utilitaires, timeline et export vidéo.",
+          "StratMotion est un planificateur tactique CS2 indépendant du jeu, actuellement en Beta Contributor basé sur la version stable 1.2. Il permet aux joueurs, IGL, coachs et équipes de préparer, visualiser et partager des stratégies sur les overviews de map avec trajectoires, utilitaires, timeline et export vidéo.",
         href: "https://stratmotion.netlify.app/",
         ctaLabel: "Découvrir StratMotion",
         blocks: [
           {
-            title: "Beta Contributor 1.2",
+            title: "Beta Contributor",
             items: [
               "Maps disponibles : Ancient, Anubis, Cache, Dust2, Inferno, Mirage et Nuke.",
               "Création de stratégies TR / CT avec joueurs, trajectoires, positions HOLD, smoke, flash, HE, molotov, C4, plant, defuse et kit.",
@@ -193,10 +194,11 @@ export const profiles: Record<Locale, Profile> = {
             ],
           },
         ],
-        tags: ["CS2", "Beta 1.2", "Strats", "Timeline", "Export MP4", "IGL"],
+        tags: ["CS2", "Beta 1.2", "Strats", "Timeline", "Export MP4", "IGL", "Beta Contributor"],
       }
     ],
     portfolioTitle: "Portfolio",
+    portfolioUpdate: "Les données ne sont plus disponibles sur VaKarM.net, je ne pourrais pas les partager sans leur permission.",
     portfolioSubtitle: "Quelques traces de mon parcours Counter-Strike, hors prestations actuelles.",
     galleryLabel: "Galerie officielle VaKarM.net",
     showcaseViewLabel: "Voir",
@@ -316,14 +318,14 @@ export const profiles: Record<Locale, Profile> = {
       },
       {
         kicker: "Software",
-        title: "StratMotion — Beta Contributor 1.2",
+        title: "StratMotion — Beta Contributor",
         description:
-          "StratMotion is a standalone CS2 tactical planner, currently available as Beta Contributor 1.2. It helps players, IGLs, coaches and teams prepare, visualize and share strategies on map overviews with paths, utility, a timeline and video export.",
+          "StratMotion is a standalone CS2 tactical planner, currently available as Beta Contributor based on stable version 1.2. It helps players, IGLs, coaches and teams prepare, visualize and share strategies on map overviews with paths, utility, a timeline and video export.",
         href: "https://stratmotion.netlify.app/",
         ctaLabel: "Discover StratMotion",
         blocks: [
           {
-            title: "Beta Contributor 1.2",
+            title: "Beta Contributor",
             items: [
               "Available maps: Ancient, Anubis, Cache, Dust2, Inferno, Mirage and Nuke.",
               "T / CT strategy creation with players, paths, HOLD positions, smoke, flash, HE, molotov, C4, plant, defuse and kit.",
@@ -356,10 +358,11 @@ export const profiles: Record<Locale, Profile> = {
             ],
           },
         ],
-        tags: ["CS2", "Beta 1.2", "Strats", "Timeline", "MP4 export", "IGL"],
+        tags: ["CS2", "Beta 1.2", "Strats", "Timeline", "MP4 export", "IGL", "Beta Contributor"],
       }
     ],
     portfolioTitle: "Portfolio",
+    portfolioUpdate: "The data is no longer available on VaKarM.net, I cannot share it without their permission.",
     portfolioSubtitle: "A few traces from my Counter-Strike background, outside current services.",
     galleryLabel: "Official VaKarM.net gallery",
     showcaseViewLabel: "View",

@@ -132,8 +132,7 @@ export default function App() {
         />
 
         <section id="portfolio" className="mt-12 scroll-mt-24">
-          <SectionTitle title={profile.portfolioTitle} subtitle={profile.portfolioSubtitle} />
-          <a
+          <SectionTitle title={profile.portfolioTitle} update={profile.portfolioUpdate} subtitle={profile.portfolioSubtitle } />          <a
             href="https://vakarm.net/coverage/galerie/Nantarena-16-2-Samedi/593"
             target="_blank"
             rel="noreferrer"
